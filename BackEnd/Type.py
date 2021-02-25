@@ -80,7 +80,8 @@ def plot_value_array(i, predictions_array, true_label):
 
 
 # Inputing a single Image
-img = Image.open("Red.png")
+placeImg = # place the Image of Clothing here
+img = Image.open(placeImg)
 img = img.resize((28, 28), Image.ANTIALIAS)
 data = asarray(img)
 img = data / 255
