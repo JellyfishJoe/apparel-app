@@ -8,11 +8,14 @@ import scipy.misc
 import scipy.cluster
 import warnings
 import requests
+#Grab the Image from the html input
+
+
+
+# Get data from fields
+polished = form.getvalue('picture')
 
 check = True
-
-# Pass thrugh img in Polished 
-polished = # pass in IMG HERE
 
 # Works just limited Api calls per month
 # response = requests.post(
