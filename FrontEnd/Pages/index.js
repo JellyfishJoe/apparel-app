@@ -2,7 +2,7 @@ const express = require('express');
 const {spawn} = require('child_process');
 const expressSession = require('express-session');
 const bodyParser = require('body-parser');
-const routes = require('./routes/routes');
+const routes = require('../routes/routes');
 
 let urlencodedParser = bodyParser.urlencoded( {
     extended: true
@@ -11,6 +11,8 @@ let urlencodedParser = bodyParser.urlencoded( {
 const app = express();
 app.post('/createClothing', urlencodedParser, routes.createFood);
 app.post('/createAccount', urlencodedParser, routes.createAccount);
+app.post('/createClothing', urlencodedParser, routes.createClothing);
+app.post('/signUp', urlencodedParser, routes.createAccount);
 app.get('/', (req, res) => {
     
     var dataToSend;
@@ -30,7 +32,5 @@ app.get('/', (req, res) => {
     });
     
 })
-app.post('/createClothing', urlencodedParser, routes.createClothing);
-app.post('/signUp', urlencodedParser, routes.createAccount);
 
 app.listen(3000);
