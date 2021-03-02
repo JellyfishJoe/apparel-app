@@ -15,7 +15,7 @@ mdb.on('error', console.error.bind(console, 'connection error'));
 mdb.once('open', callback => {});
 
 let clothesSchema = mongoose.Schema({
-    itemId: Int16Array,
+    itemId: String,
     type: String,
     color: String,
     dateAdded: String,
@@ -51,6 +51,7 @@ let Account = mongoose.model('Account_Collection', accountSchema);
 
   
 exports.createAccount = (req, res) => {
+    console.log("This is working");
     let account = new Account({
       username: req.body.username,
       password: req.body.password,
