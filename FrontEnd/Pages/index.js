@@ -1,7 +1,8 @@
 const express = require('express');
 const expressSession = require('express-session');
 const bodyParser = require('body-parser');
-const routes = require('./routes/routes');
+const routes = require('../routes/routes');
+
 
 let urlencodedParser = bodyParser.urlencoded( {
     extended: true
