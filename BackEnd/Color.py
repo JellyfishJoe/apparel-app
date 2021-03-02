@@ -8,14 +8,15 @@ import scipy.misc
 import scipy.cluster
 import warnings
 import requests
-#Grab the Image from the html input
 
+pink = "Pink.png"
+pant = "Pants.png"
+red = "Red.png"
 
-
-# Get data from fields
-polished = form.getvalue('picture')
-
+raw = "raw.jpg"
 check = True
+
+polished = red
 
 # Works just limited Api calls per month
 # response = requests.post(
@@ -35,6 +36,7 @@ while check:
     warnings.filterwarnings("ignore", category=DeprecationWarning)
     NUM_CLUSTERS = 5
 
+    # print('reading image')
     # input image here
     im = Image.open(polished)
     im = im.resize((150, 150))  # optional, to reduce time
@@ -42,8 +44,9 @@ while check:
     shape = ar.shape
     ar = ar.reshape(scipy.product(shape[:2]), shape[2]).astype(float)
 
-    print('finding clusters')
+    # print('finding clusters')
     codes, dist = scipy.cluster.vq.kmeans(ar, NUM_CLUSTERS)
+    # print('cluster centres:\n', codes)
 
     vecs = scipy.cluster.vq.vq(ar, codes)  # assign codes
     counts, bins = scipy.histogram(vecs, len(codes))  # count occurrences
@@ -51,10 +54,11 @@ while check:
     index_max = scipy.argmax(counts)  # find most frequent
     peak = codes[index_max]
     colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
-
+    # print('Main Color(#%s)' % colour)
     RGB = tuple(int(colour[i:i + 2], 16) for i in (0, 2, 4))
     if RGB == (0, 0, 0):
         print("Failure")
     else:
-        print(colour)
+        print("Hex, "+colour)
+        # print(RGB)
         check = False
