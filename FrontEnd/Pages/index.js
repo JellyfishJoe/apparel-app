@@ -17,4 +17,6 @@ app.post('/signUp', urlencodedParser, routes.createAccount);
 app.get('/wardrobe', urlencodedParser, routes.getPython)
 
 
-app.listen(3000);
+app.listen(3000, () => {
+	console.log("Server has started!")
+})
