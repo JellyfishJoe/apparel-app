@@ -51,14 +51,13 @@ let Account = mongoose.model('Account_Collection', accountSchema);
 
   
 exports.createAccount = (req, res) => {
-    console.log("This is working");
     let account = new Account({
-      username: req.body.username,
-      password: req.body.password,
+      username: req.body.userName,
+      password: req.body.passWord,
     });
     account.save((err) => {
       if (err) return console.error(err);
-      console.log(req.body.username + ' added');
+      console.log(req.body.userName + ' added');
     });
   
   }
