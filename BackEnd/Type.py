@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from numpy import asarray
 
-print(tf.__version__)
+# print(tf.__version__)
 
 fashion_mnist = tf.keras.datasets.fashion_mnist
 
@@ -35,7 +35,7 @@ model.fit(train_images, train_labels, epochs=10)
 
 test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
 
-print('\nTest accuracy:', test_acc)
+# print('\nTest accuracy:', test_acc)
 
 
 # Using the Model
@@ -78,10 +78,9 @@ def plot_value_array(i, predictions_array, true_label):
     thisplot[true_label].set_color('blue')
 
 
+# Imputing a single Image and formatting into (28,28) pixel for the machine Learning to go over
 
-# Inputing a single Image
-placeImg = # place the Image of Clothing here
-img = Image.open(placeImg)
+img = Image.open("Red.png")
 img = img.resize((28, 28), Image.ANTIALIAS)
 data = asarray(img)
 img = data / 255
@@ -89,19 +88,20 @@ img = np.delete(img, 2, 2)
 img = np.delete(img, 1, 2)
 img = np.delete(img, 0, 2)
 img = img.squeeze()
-print(img.shape)
 
+# img = test_images[1]
+# print(img.shape)
 
 # Add the image to a batch where it's the only member.
 img = (np.expand_dims(img, 0))
-print(img.shape)
+# print(img.shape)
 # Check that image out
 predictions_single = probability_model.predict(img)
 
-print(predictions_single)
+# print(predictions_single)
 
 plot_value_array(1, predictions_single[0], test_labels)
 _ = plt.xticks(range(10), class_names, rotation=45)
 
 place = np.argmax(predictions_single[0])
-print(class_names[place])
+print("Type, "+class_names[place])
