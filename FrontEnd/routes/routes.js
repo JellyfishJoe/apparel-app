@@ -49,6 +49,22 @@ exports.createClothing = (req, res) => {
   
 let Account = mongoose.model('Account_Collection', accountSchema);
 
+exports.getPython = (req, res) => {
+  var dataToSend;
+  // spawn new child process to call the python script
+  const python = spawn('python', ['Handle.py','Image']);
+  // collect data from script
+  python.stdout.on('data', function (data) {
+      console.log('Pipe data from python script ...');
+      dataToSend = data.toString();
+  });
+  // in close event we are sure that stream from child process is closed
+  python.on('close', (code) => {
+      console.log(`child process close all stdio with code ${code}`);
+      // send data to browser
+      res.send(dataToSend)
+  });
+}
   
 exports.createAccount = (req, res) => {
     let account = new Account({
@@ -61,5 +77,4 @@ exports.createAccount = (req, res) => {
     });
     res.redirect('https://signup');
   }
-
 
