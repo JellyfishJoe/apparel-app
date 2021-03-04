@@ -78,4 +78,4 @@ exports.createAccount = (req, res) => {
         res.send(dataToSend)
     });
     
-})
+}
