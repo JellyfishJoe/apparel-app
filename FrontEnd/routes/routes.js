@@ -65,6 +65,7 @@ exports.createAccount = (req, res) => {
   exports.getPython = (req, res) => {
     var dataToSend;
     // spawn new child process to call the python script
+    
     const python = spawn('python', ['script2.py','Image']);
     // collect data from script
     python.stdout.on('data', function (data) {
