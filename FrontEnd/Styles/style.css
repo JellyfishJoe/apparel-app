@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:FrontEnd/Styles/style.css
 .account {
     display: flex;
     justify-content: flex-end;
@@ -64,3 +65,205 @@ body {
 }
 
 /*End of the stylization of the dropdown button */
+=======
+.account {
+    display: flex;
+    justify-content: flex-end;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    border-bottom-style: solid;
+}
+
+body {
+    background-color: #9AC6C5;
+    color: black;
+}
+
+.rightSide {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20%;
+    /* margin-bottom: 10%; */
+    font-size: 25px; 
+}
+
+.leftSide {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 15%;
+    margin-bottom: 10%;
+    font-size: 25px;
+}
+
+.dropbtn {
+    margin-right: 200px;
+    cursor: pointer;
+}
+/* 
+.dropdown{
+    margin: 0 10px 0 0;
+    position: relative;
+    display: inline-block;
+} */
+
+
+.signIn-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+}
+
+.signIn-content a{
+    padding: 12px 16px;
+    display: block;
+}
+
+.show {display: block;}
+
+.username, .password{
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #292929;
+}
+  
+li {
+    float: left;
+}
+
+.dropdown {
+    float:right;
+}
+  
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #292929;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: aquamarine;
+}
+  
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+li {
+    border-right: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+}
+
+.pie {
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: #292929;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+  
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+input[type=button]:hover {
+    background-color: #45a049;
+}
+  
+.container {
+    border-radius: 14px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.textBox1, .textBox3 {
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left; 
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.textBox2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    float: right; 
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+    width: 30%;
+}
+
+.picture1, .picture3 {
+    width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+.picture2 {
+    width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+>>>>>>> Stashed changes:style.css

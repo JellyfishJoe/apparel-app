@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Clothing</title>
+    <link rel = "stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Add Clothing</h1> 
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wardrobe.html">Wardrobe</a></li>
+
+    </ul>
+
+    <div class="container">
+    <form action="" method="POST">
+        <div>
+            <label>Item of clothing:</label>
+            <select name="clothing">
+                <option value="selectItem" disabled selected>Select Item of Clothing</option>
+                <option value="shirt">Shirt</option>
+                <option value="pants">Pants</option>
+                <option value="skirt">Skirt</option>
+                <option value="shoes">Shoes</option>
+                <option value="hat">Hat</option>
+                <option value="scarf">Scarf</option>
+                <option value="sweater">Sweater</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <lable>Season:</lable>
+            <select name="season">
+                <option value="selectSeason" disabled selected>Select Season</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Color:</label>
+            <input type="text" name="color" placeholder="Enter Color"> 
+        </div>
+        <br>
+        <div>
+            <lable>Description:</lable>
+            <textarea name="description" placeholder="Enter Description"></textarea>
+        </div>
+        <div class="button">
+            <input type="button" value="Save">
+          </div>
+    </div>
+    </form>
+</body>
+</html>
