@@ -59,5 +59,6 @@ exports.createAccount = (req, res) => {
       if (err) return console.error(err);
       console.log(req.body.userName + ' added');
     });
-  
+    res.redirect('https://signup');
   }
+
