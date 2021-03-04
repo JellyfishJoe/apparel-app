@@ -14,7 +14,7 @@ app.post('/createClothing', urlencodedParser, routes.createFood);
 app.post('/createAccount', urlencodedParser, routes.createAccount);
 app.post('/createClothing', urlencodedParser, routes.createClothing);
 app.post('/signUp', urlencodedParser, routes.createAccount);
-app.get('/wardrobe', urlencodedParser, routes.getPython)
+//app.get('/wardrobe', urlencodedParser, routes.getPython)
 
 
 app.listen(3000, () => {
