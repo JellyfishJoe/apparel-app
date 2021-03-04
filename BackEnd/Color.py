@@ -9,13 +9,9 @@ import scipy.cluster
 import warnings
 import requests
 
-pink = "Pink.png"
-pant = "Pants.png"
-red = "Red.png"
 
-raw = "raw.jpg"
+
 check = True
-
 polished = red
 
 # Works just limited Api calls per month

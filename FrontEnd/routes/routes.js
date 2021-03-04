@@ -52,7 +52,9 @@ let Account = mongoose.model('Account_Collection', accountSchema);
 exports.getPython = (req, res) => {
   var dataToSend;
   // spawn new child process to call the python script
-  const python = spawn('python', ['Handle.py','Image']);
+  // get the image from the database 
+  const python = spawn('python', ['Handle2.py','Image']);
+
   // collect data from script
   python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...');
