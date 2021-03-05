@@ -77,3 +77,9 @@ exports.getClothing = (req, res) => {
     res.json(clothing);
 })
 }
+
+exports.delete = (req, res) => {
+  Clothing.findByIdAndDelete(req.params.id, (err, clothing) => {
+    if (err) return console.error(err);
+  });
+};
