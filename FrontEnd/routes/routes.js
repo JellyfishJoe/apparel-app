@@ -20,7 +20,8 @@ let clothesSchema = mongoose.Schema({
     itemId: String,
     type: String,
     color: String,
-    dateAdded: String,
+    season: String,
+    description: String,
     imgData: String,
     username: String
   });
@@ -28,14 +29,14 @@ let clothesSchema = mongoose.Schema({
 let Clothing = mongoose.model('Clothing', clothesSchema);
 
 
-//set clothing with the username of user
+//get clothing with the username of user
 exports.createClothing = (req, res) => {
     let clothing = new Clothing({
         itemId: req.body.itemId,
-        type: req.body.type,
+        type: req.body.clothing,
         color: req.body.color,
-        dateAdded: req.body.dateAdded,
-        imgData: req.body.imgData,
+        season: req.body.season,
+        color: req.body.color,
         username: req.body.username
       });
       clothing.save((err) => {
@@ -102,3 +103,30 @@ exports.delete = (req, res) => {
     if (err) return console.error(err);
   });
 };
+
+exports.logout = (req, res) => {
+  //Destroy the session and go back to login
+  req.session.destroy(err => {
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect('../pages/signin.html');
+    };
+  });
+}
+
+exports.attemptlogin = (req, res) => {
+  Account.find({ username: req.body.username}, (err, account) => {
+    if (err) return console.error(err);
+      if(req.body.username == account[0].username &&  req.body.password == account[0].password) {
+      req.session.user = {
+        isAuthenticated: true,
+        username: req.body.username
+      }
+      console.log(req.body.username)
+      res.redirect('../pages/wardrobe.html')
+    } else {
+      res.redirect('../pages/signin.html')
+    }
+  });
+}
