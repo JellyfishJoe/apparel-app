@@ -77,5 +77,3 @@ exports.getClothing = (req, res) => {
     res.json(clothing);
 })
 }
-
-  
