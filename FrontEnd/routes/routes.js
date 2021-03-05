@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
+//Mongo connection
 mongoose.connect('mongodb+srv://admin:LJVRsz0lCEuzWymQ@apparel-app.qaodr.mongodb.net/data?retryWrites=true&w=majority', {
   useUnifiedTopology: true,
   useNewUrlParser: true
@@ -14,11 +15,13 @@ let mdb = mongoose.connection;
 mdb.on('error', console.error.bind(console, 'connection error'));
 mdb.once('open', callback => {});
 
+//Schema for clothing
 let clothesSchema = mongoose.Schema({
     itemId: String,
     type: String,
     color: String,
-    dateAdded: String,
+    season: String,
+    description: String,
     imgData: String,
     username: String
   });
@@ -26,13 +29,14 @@ let clothesSchema = mongoose.Schema({
 let Clothing = mongoose.model('Clothing', clothesSchema);
 
 
+//get clothing with the username of user
 exports.createClothing = (req, res) => {
     let clothing = new Clothing({
         itemId: req.body.itemId,
-        type: req.body.type,
+        type: req.body.clothing,
         color: req.body.color,
-        dateAdded: req.body.dateAdded,
-        imgData: req.body.imgData,
+        season: req.body.season,
+        color: req.body.color,
         username: req.body.username
       });
       clothing.save((err) => {
@@ -41,6 +45,7 @@ exports.createClothing = (req, res) => {
       });
   }
   
+  //user Account schema
   let accountSchema = mongoose.Schema({
     username: String,
     password: String,
@@ -69,14 +74,59 @@ exports.getPython = (req, res) => {
 }
   
 exports.createAccount = (req, res) => {
+  //set account to user input
     let account = new Account({
       username: req.body.userName,
       password: req.body.passWord,
     });
+    //save and redirect to signin
     account.save((err) => {
       if (err) return console.error(err);
       console.log(req.body.userName + ' added');
     });
-    res.redirect('https://signup');
+    res.redirect('../pages/signin.html');
   }
 
+  //API get of clothing with userName
+exports.getClothing = (req, res) => {
+  Clothing.find({ username: req.params.userName}, (err, clothing) => {
+    if (err) return console.error(err);
+    console.log(req.params.username);
+
+    res.json(clothing);
+})
+}
+
+//Delete clothing with id
+exports.delete = (req, res) => {
+  Clothing.findByIdAndDelete(req.params.id, (err, clothing) => {
+    if (err) return console.error(err);
+  });
+};
+
+exports.logout = (req, res) => {
+  //Destroy the session and go back to login
+  req.session.destroy(err => {
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect('../pages/signin.html');
+    };
+  });
+}
+
+exports.attemptlogin = (req, res) => {
+  Account.find({ username: req.body.username}, (err, account) => {
+    if (err) return console.error(err);
+      if(req.body.username == account[0].username &&  req.body.password == account[0].password) {
+      req.session.user = {
+        isAuthenticated: true,
+        username: req.body.username
+      }
+      console.log(req.body.username)
+      res.redirect('../pages/wardrobe.html')
+    } else {
+      res.redirect('../pages/signin.html')
+    }
+  });
+}

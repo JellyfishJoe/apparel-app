@@ -1,71 +1,4 @@
-<<<<<<< Updated upstream:FrontEnd/Styles/style.css
-.account {
-    display: flex;
-    justify-content: flex-end;
-}
 
-h1 {
-    display: flex;
-    justify-content: center;
-    border-bottom-style: solid;
-}
-
-body {
-    background-color: #243447;
-    color: white;
-}
-
-.rightSide {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20%;
-    /* margin-bottom: 10%; */
-    font-size: 25px; 
-}
-
-.leftSide {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 15%;
-    margin-bottom: 10%;
-    font-size: 25px;
-}
-
-/*Beginning of the styliation for the dropdown button */
-.dropbtn {
-    margin-right: 200px;
-    cursor: pointer;
-}
-
-.dropdown{
-    margin: 0 10px 0 0;
-    position: relative;
-    display: inline-block;
-}
-
-
-.signIn-content{
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    z-index: 1;
-}
-
-.signIn-content a{
-    padding: 12px 16px;
-    display: block;
-}
-
-.show {display: block;}
-
-.username, .password{
-    color: black;
-}
-
-/*End of the stylization of the dropdown button */
-=======
 .account {
     display: flex;
     justify-content: flex-end;
@@ -266,4 +199,3 @@ img {
     margin-right: auto;
     margin-top: 5%;
 }
->>>>>>> Stashed changes:style.css
