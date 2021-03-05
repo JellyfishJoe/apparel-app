@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe Page</title>
     <link rel = "stylesheet" href="style.css">
+
 </head>
 <body>
-    <label>Create an entry :</label>
-    <br></br>
-    <label>Uploading an image of clothing  </label>
-    <br></br>
-    <form action="/detail" method="post">
-    <input type="file"
-    name="rawImage"
-    accept="image/png, image/jpeg">
-    <br/>
-    <br/>
-    <input type="submit" value="Use">
+    <h1>Wardrobe</h1>
+    <ul>
+        <li><a href="addClothing.html">Add Clothing</a></li>
+        <li><a href="">Delete Clothing</a></li>
+        <li><a href="">View Clothing</a></li>
+        <li class="dropdown">
+            <a class="dropbtn">Wardrobe</a>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="signin.html">Login</a>
+                <a href="wardrobe.html">Wardrobe</a>
+            </div>
+        </li>    
+    </ul>
+    <br>
 
-</form>
-        
-    
+    <div class="pie"></div>
+
+
 </body>
 </html>
