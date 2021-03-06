@@ -2,9 +2,11 @@ const express = require('express');
 const {spawn} = require('child_process');
 const expressSession = require('express-session');
 const bodyParser = require('body-parser');
+var path = require('path');
 const routes = require('../routes/routes');
 
 const app = express();
+app.use(express.static(path.join("C:/Homework/Year 2/Software Developement/apparel-app", 'FrontEnd')))
 
 let urlencodedParser = bodyParser.urlencoded( {
     extended: true
@@ -35,4 +37,5 @@ app.get('/logout', routes.logout);
 
 app.listen(3000, () => {
 	console.log("Server has started!")
+    console.log(__dirname)
 })

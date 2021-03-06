@@ -84,7 +84,7 @@ exports.createAccount = (req, res) => {
       if (err) return console.error(err);
       console.log(req.body.userName + ' added');
     });
-    res.redirect('../pages/signin.html');
+    res.redirect('/Pages/index.html');
   }
 
   //API get of clothing with userName
@@ -110,7 +110,7 @@ exports.logout = (req, res) => {
     if(err) {
       console.log(err);
     } else {
-      res.redirect('../pages/signin.html');
+      res.redirect('/Pages/index.html');
     };
   });
 }
@@ -129,7 +129,7 @@ exports.attemptlogin = (req, res) => {
       console.log(req.body.username)
       res.redirect('../pages/wardrobe.html')
     } else {
-      res.redirect('../pages/signin.html')
+      res.redirect('/Pages/index.html');
     }
   });
 }
