@@ -6,20 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel = "stylesheet" href="../Styles/style.css">
-    <script src="dropDown.js"></script>
+    <script src="../routes/dropDown.js"></script>
 </head>
 <body>
-   <!-- <button class="account">Sign Up</button>
-    <div class="dropdown">
-        <button onclick="drop()" class="dropbtn">Sign In v</button>
-        <div id="signInDrop" class="signIn-content">
-            <label class="username" for="username">Username: </label>
-            <input type="text" id="username" name="username"> <br><br>
-            <Label class="password" for="password">Password: </Label>
-            <input type="password" id="password" name="password"> <br><br>
-            <input type="submit" value="Sign In" id="signInSubmit">
-        </div>
-    </div> -->
     <h1>Welcome to Virtual Wardrobe</h1>
 
     <!-- <p class="rightSide">Description of picture</p>
@@ -30,7 +19,18 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="createAccount.html">Create Account</a></li>
-        <li><a href="signin.html">Sign In</a></li>
+        <li>
+            <div class="dropdown">
+                <button onclick="drop()" class="dropbtn">Sign In v</button>
+                <div id="signInDrop" class="signIn-content">
+                    <label class="username" for="username">Username: </label>
+                    <input type="text" id="username" name="username"> <br><br>
+                    <Label class="password" for="password">Password: </Label>
+                    <input type="password" id="password" name="password"> <br><br>
+                    <input type="submit" value="Sign In" id="signInSubmit">
+                </div>
+            </div>
+        </li>
     </ul>
 
     <div class="picture1">
