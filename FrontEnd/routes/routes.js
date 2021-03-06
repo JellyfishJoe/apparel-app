@@ -116,8 +116,11 @@ exports.logout = (req, res) => {
 }
 
 exports.attemptlogin = (req, res) => {
+  //finds account with username
   Account.find({ username: req.body.username}, (err, account) => {
     if (err) return console.error(err);
+    //compares password of that username to input
+    //if it goes through, they are authenticated, otherwise no
       if(req.body.username == account[0].username &&  req.body.password == account[0].password) {
       req.session.user = {
         isAuthenticated: true,
